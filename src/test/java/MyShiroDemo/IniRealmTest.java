@@ -8,7 +8,7 @@ import org.apache.shiro.subject.Subject;
 import org.junit.Test;
 
 /**
- * Description:
+ * Description: IniRealm配置使用测试
  *
  * @ClassName: IniRealmTest
  * @Author: GengRui

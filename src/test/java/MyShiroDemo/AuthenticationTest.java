@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Description:
+ * Description: Shiro认证测试
  *
  * @ClassName: AuthenticationTest
  * @Author: GengRui

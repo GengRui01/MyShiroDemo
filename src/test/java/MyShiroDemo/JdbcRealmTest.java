@@ -9,7 +9,7 @@ import org.apache.shiro.subject.Subject;
 import org.junit.Test;
 
 /**
- * Description:
+ * Description: JdbcRealm的使用测试
  *
  * @ClassName: JdbcRealmTest
  * @Author: GengRui
