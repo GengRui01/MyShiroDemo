@@ -1,0 +1,7 @@
+spring:
+  datasource:
+     username: root
+     password: gengrui
+     url: jdbc:mysql://localhost:3306/db_shiro?serverTimezone=GMT%2B8
+     driver-class-name: com.mysql.jdbc.Driver
+     type: com.alibaba.druid.pool.DruidDataSource
