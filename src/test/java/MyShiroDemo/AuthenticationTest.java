@@ -26,25 +26,26 @@ public class AuthenticationTest {
 
     @Test
     public void testAuthentication() {
-        //1. 构建SecurityManager 环境
+        // 1. 构建SecurityManager 环境
         DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
         defaultSecurityManager.setRealm(simpleAccountRealm);
 
-        //2. 主体提交认证请求
+        // 2. 主体提交认证请求
+        // SecurityManager认证
         SecurityUtils.setSecurityManager(defaultSecurityManager);
         Subject subject = SecurityUtils.getSubject();
-
+        // Authenticator认证
+        // 账号错了会抛UnknownAccountException异常
+        // 密码错了会抛IncorrectCredentialsException异常
         UsernamePasswordToken token = new UsernamePasswordToken("admin", "123456");
         subject.login(token);
-
         System.out.println("是否认证通过：" + subject.isAuthenticated());
-
 //        subject.logout();
+//        System.out.println("是否认证通过：" + subject.isAuthenticated());
 
-        System.out.println("是否认证通过：" + subject.isAuthenticated());
-
-        //3. 验证是否拥有指定角色
+        // 3. Realm验证是否拥有指定角色
+        // 错了会抛UnauthorizedException异常
         subject.checkRole("admin");
-        subject.checkRoles("admin", "user"); // 错了会抛UnauthorizedException异常
+        subject.checkRoles("admin", "user");
     }
 }
